@@ -7,3 +7,5 @@ The low level inputs are handled by an Arduino Mega 2560, it is connected to Ras
 Rosserial Package is used to communicate between Pi and Arduino.
 
 In this project Joystick events from a gamepad are used to drive the robot. Localization is done using rotary encoders on motor.
+
+Code for Arduino at https://github.com/mijazm/Simple_ROS_Arduino

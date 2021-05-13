@@ -7,8 +7,6 @@
 # 1. https://andrewdai.co/xbox-controller-ros.html#rosjoy
 # 2. http://wiki.ros.org/joy/Tutorials/WritingTeleopNode
 
-# Code for robot at https://github.com/mijazm/Simple_ROS_Arduino
-
 import rospy
 from std_msgs.msg import String
 from sensor_msgs.msg import Joy
