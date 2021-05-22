@@ -14,13 +14,13 @@ from sensor_msgs.msg import Joy
 # WASD game based control, here the left joystick of the gamepad Logitech F710 is used
 def callback(data):
     control = "x"
-    if data.axes[1] > 0:
+    if data.buttons[3] == 1:
         control = "w"
-    elif data.axes[1] < 0:
+    elif data.buttons[0] == 1:
         control = "s"
-    elif data.axes[0] > 0:
+    elif data.buttons[1] == 1:
         control = "d"
-    elif data.axes[0] < 0:
+    elif data.buttons[2] == 1:
         control = "a"
     else:
         control = "x"
@@ -31,7 +31,7 @@ def callback(data):
 def start():
     # publishing to "/rover_control" to control the Simple_ROS_Robot
     global pub
-    pub = rospy.Publisher('/rover_control', String)
+    pub = rospy.Publisher('/rover_control', String, queue_size=1)
     # subscribed to joystick inputs on topic "joy"
     rospy.Subscriber("joy", Joy, callback)
     # starts the node
